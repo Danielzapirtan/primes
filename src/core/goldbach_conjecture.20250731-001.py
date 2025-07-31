@@ -5,7 +5,7 @@ by brute force.
 It does not generate any certificate.
 """
 
-import sys
+import os, sys
 
 def pr(p: int) -> bool:
   """
@@ -34,6 +34,8 @@ def gbab(a: int, b: int) -> bool:
   """
   Checks Goldbach Conjecture in interval [a, b] (assumed a even, 6 <= a <= b).
   """
+  if b < 2**64-2:
+    return os.system("bin/goldbach_conjecture "+str(a)+" "+str(b)) == 0;
   n = a
   while n <= b:
     if gbn(n) == False:
@@ -46,5 +48,6 @@ if __name__=="__main__":
   b = int(sys.argv[2])
   if a%2 == 1:
       a += 1
+  os.system("gcc -o bin/goldbach_conjecture src/core/goldbach_conjecture.c -Os -w -DHAS64BIT")
   sys.exit(gbab(a, b) == False)
 
