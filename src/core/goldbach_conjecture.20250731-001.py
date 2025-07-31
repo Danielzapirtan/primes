@@ -44,8 +44,10 @@ def gbab(a: int, b: int) -> bool:
   return True
 
 if __name__=="__main__":
-  a = int(sys.argv[1])
-  b = int(sys.argv[2])
+  a = int(sys.argv[1])<<20
+  if a == 0:
+    a = 6
+  b = int(sys.argv[2])<<20
   if a%2 == 1:
       a += 1
   os.system("gcc -o bin/goldbach_conjecture src/core/goldbach_conjecture.c -Os -w -DHAS64BIT")
