@@ -40,7 +40,7 @@ def generate_milestone_primes():
     
     print("Calculating milestone primes...")
     
-    for n in range(1000, 11000, 1000):  # 1000, 2000, ..., 10000
+    for n in range(1000, 101000, 1000):  # 1000, 2000, ..., 100000
         print(f"Finding the {n}th prime...")
         nth_prime = find_nth_prime(n)
         results[str(n)] = nth_prime
