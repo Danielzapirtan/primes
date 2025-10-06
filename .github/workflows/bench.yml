@@ -5,7 +5,7 @@ on:
 inputs:
   name: 'h'
   type: number
-  required: True
+  required: true
 
 jobs:
   bench:
