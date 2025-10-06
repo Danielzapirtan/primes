@@ -12,14 +12,27 @@ def pr(p):
         k+=2
     return True
 
+import ctypes
+
+# Load the shared library
+gbn_lib = ctypes.CDLL('./gbn.so')
+
+# Specify argument and return types
+gbn_lib.gbn.argtypes = [ctypes.c_uint]
+gbn_lib.gbn.restype = ctypes.c_int
+
 def gbn(n):
+    """Whether n is a Goldbach number"""
+    return bool(gbn_lib.gbn(n))
+
+'''def gbn(n):
     p=3
     while p<=n-p:
         if pr(p):
             if pr(n-p):
                 return True
         p+=2
-    return False
+    return False'''
 
 def gbab(a,b):
     n=a
