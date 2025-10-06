@@ -2,6 +2,10 @@ name: Bench
 
 on:
   workflow_dispatch:
+inputs:
+  name: 'h'
+  type: number
+  required: true
 
 jobs:
   bench:
@@ -20,7 +24,7 @@ jobs:
       - name: Execution
         run: |
           ulimit -t 21300
-          python3 ./src/core/goldbach_conjecture.py
+          python3 ./src/core/goldbach_conjecture.py '{{ inputs.h }}'
 
 
 
