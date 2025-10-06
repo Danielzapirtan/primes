@@ -21,6 +21,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y python3
+          gcc -shared -fPIC -o gbn.so ./src/core/goldbach_conjecture.c -O4 -march=native -w
       
       - name: Execution
         run: |
