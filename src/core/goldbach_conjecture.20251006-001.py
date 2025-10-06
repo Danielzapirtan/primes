@@ -18,7 +18,7 @@ import ctypes
 gbn_lib = ctypes.CDLL('./gbn.so')
 
 # Specify argument and return types
-gbn_lib.gbn.argtypes = [ctypes.c_uint]
+gbn_lib.gbn.argtypes = [ctypes.c_ulong]
 gbn_lib.gbn.restype = ctypes.c_int
 
 def gbn(n):
