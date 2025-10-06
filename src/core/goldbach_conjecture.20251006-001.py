@@ -31,7 +31,7 @@ def gbab(a,b):
 
 if __name__=="__main__":
     import sys
-    h=int(sys.argv[1])
+    h=int(sys.argv[1].split('.')[0])
     a=2**h
     b=2**(h+1)
     if gbab(a,b) == False:
