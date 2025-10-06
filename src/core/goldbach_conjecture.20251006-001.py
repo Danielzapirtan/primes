@@ -30,12 +30,13 @@ def gbab(a,b):
     return True
 
 if __name__=="__main__":
-    for h in [5, 6, 7, 8, 10, 12, 14, 16, 20, 24, 28, 29]:
-        a=2**h
-        b=2**(h+1)
-        if gbab(a,b) == False:
-            print('error', h)
-            break
-        print(h)
+    import sys
+    h=int(sys.argv[1])
+    a=2**h
+    b=2**(h+1)
+    if gbab(a,b) == False:
+        print('error', h)
+        break
+    print(h)
 
 
