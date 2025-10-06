@@ -36,7 +36,6 @@ if __name__=="__main__":
     b=2**(h+1)
     if gbab(a,b) == False:
         print('error', h)
-        break
     print(h)
 
 
