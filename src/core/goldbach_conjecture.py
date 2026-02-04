@@ -1,1 +1,0 @@
-goldbach_conjecture.20251006-001.py
